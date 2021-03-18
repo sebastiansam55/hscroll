@@ -1,6 +1,16 @@
 # hscroll
 Neovim python plugin for horizontal scrolling
 
+This at its core just passes through the scroll wheel signals to nvim. 
+I have not tested it with gvim or neovim qt which seem to already read the scroll wheel signals.
+To make it actually go I added these lines to my `init.vim`;
+
+```
+map <ScrollWheelLeft> 5z<Left>
+map <ScrollWheelRight> 5z<Right>
+```
+
+
 ## Requirements
 Uses the `evdev` library, you can check out detailed installation instructions [here](https://python-evdev.readthedocs.io/en/latest/install.html)
 
