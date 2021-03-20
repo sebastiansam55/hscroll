@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-# from pynvim import attach
 import pynvim
 
 import evdev
@@ -9,10 +8,6 @@ from evdev import ecodes as e
 import threading
 import logging
 
-mouse = "Logitech MX Master 3"
-
-# nvim = attach('socket', path='/tmp/nvim')
-
 @pynvim.plugin
 class HScroll(object):
     def __init__(self, nvim):
@@ -20,7 +15,7 @@ class HScroll(object):
         rightscroll = nvim.replace_termcodes('<ScrollWheelRight>')
         leftscroll = nvim.replace_termcodes('<ScrollWheelLeft>')
 
-        mouse = self.nvim.vars['hscroll_mouse']
+        mouse = self.nvim.vars['hscroll_wheel']
 
         print("grabbing mouse device")
         m = grab_device(get_devices(), mouse)
