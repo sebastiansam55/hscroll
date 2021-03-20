@@ -20,6 +20,8 @@ class HScroll(object):
         rightscroll = nvim.replace_termcodes('<ScrollWheelRight>')
         leftscroll = nvim.replace_termcodes('<ScrollWheelLeft>')
 
+        mouse = self.nvim.vars['hscroll_mouse']
+
         print("grabbing mouse device")
         m = grab_device(get_devices(), mouse)
         print("grabbed device, starting thread")
